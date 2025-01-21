@@ -24,10 +24,13 @@ fn main() {
 
     let remainder = 43 % 5;
 
-    println!("Sum: {}, Difference: {}, Product: {}, Quotient: {}, Remainder: {}", sum, difference, product, quotient, remainder);
+    println!(
+        "Sum: {}, Difference: {}, Product: {}, Quotient: {}, Remainder: {}",
+        sum, difference, product, quotient, remainder
+    );
 
     let t = true;
-    
+
     println!("The value of t is: {}", t);
 
     let c = 'z';
@@ -36,4 +39,35 @@ fn main() {
     let heart_eyed_cat = '😻';
 
     println!("The value of heart_eyed_cat is: {}", heart_eyed_cat);
+
+    let tup: (i32, f64, u8, i32) = (500, 6.4, 1, 2);
+
+    println!("The value of tup is: {:?}", tup);
+
+    let (x, y, z, a) = tup;
+
+    println!("The value of x, y, z, a is: {}, {}, {}, {}", x, y, z, a);
+    println!(
+        "The value of x, y, z is: {}, {}, {}, {}",
+        tup.0, tup.1, tup.2, tup.3
+    );
+
+    let a = [1, 2, 3, 4, 5];
+
+    println!("The value of a is: {:?}", a);
+
+    let a = [3; 100];
+
+    println!("The value of a is: {:?}", a);
+
+    
+    let mut index = 0;
+    loop {
+        index = index + 1;
+        if index == 999 {
+            println!("The value of a[0] is:{}", a[index]);
+            break;
+        }
+    }
+
 }
