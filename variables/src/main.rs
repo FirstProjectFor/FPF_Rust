@@ -69,7 +69,8 @@ fn main() {
         }
     }
 
-    let name = "张三".to_string();
+    let mut name = String::from("张三");
+    name.push_str(", 你好");
     // invoke custome function
     let (age, name) = hello(name, 23);
 
