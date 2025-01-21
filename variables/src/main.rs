@@ -60,14 +60,52 @@ fn main() {
 
     println!("The value of a is: {:?}", a);
 
-    
     let mut index = 0;
     loop {
         index = index + 1;
-        if index == 999 {
+        if index == 99 {
             println!("The value of a[0] is:{}", a[index]);
             break;
         }
     }
 
+    let name = "张三".to_string();
+    // invoke custome function
+    let (age, name) = hello(name, 23);
+
+    println!("The value of name is: {}, age is: {}", name, age);
+
+    let number = if index == 99 { 33 } else { 22 };
+
+    println!("The value of number is: {}", number);
+
+    let elments = [1, 2, 3];
+
+    for element in elments {
+        println!("The value of ele is: {}", element);
+    }
+
+    for number in 1..40 {
+        println!("The fib value of number {} is: {}", number, fib(number));
+    }
+}
+
+fn hello(name: String, age: u64) -> (u64, String) {
+    println!(
+        "Hello, {}, your age is {}! (from a custom function)",
+        name, age
+    );
+
+    (age, name)
+}
+
+fn fib(number: u64) -> u64 {
+    if number == 0 {
+        return 0;
+    } else if number == 1 {
+        return 1;
+    } else if number == 2 {
+        return 1;
+    }
+    return fib(number - 1) + fib(number - 2);
 }
